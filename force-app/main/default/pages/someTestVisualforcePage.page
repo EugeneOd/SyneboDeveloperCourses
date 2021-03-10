@@ -1,0 +1,39 @@
+<apex:page extensions="GroupController" standardController="Group__c"  showHeader="false" applyHtmlTag="false" renderAs="pdf">
+    <head>
+        <style> 
+            .item-data { 
+            font-size:25px;
+            color: blue;
+            padding-left: 15px;
+            } 
+        </style>
+    </head>  
+    <h1>Group Info</h1>
+    <table>
+        <tr>
+            <th>Group Name</th>  <td class="item-data"> <apex:outputText value="{!groupName }"/> </td>
+        </tr>
+        <tr>
+            <th>Group Leader</th>  <td class="item-data"> <apex:outputText value="{!GroupLeader }"/> </td>
+        </tr>
+        <tr>
+            <th>Date of the creation</th>  <td class="item-data"> <apex:outputText value="{!DateOfTheCreation }"/> </td>
+        </tr>
+        <tr>
+            <th>Number of students at their own expense</th>  <td class="item-data"> <apex:outputText value="{!NumberOfStudentsAtTheirOwnExpense }"/> </td>
+        </tr>
+        <tr>
+            <th>Number of students in the group</th>  <td class="item-data"> <apex:outputText value="{!NumberOfStudentsInTheGroup }"/> </td>
+        </tr>
+        <tr>
+            <th>Number of students on a budget</th>  <td class="item-data"> <apex:outputText value="{!NumberOfStudentsOnABudget }"/> </td>
+        </tr>
+        <tr>
+            <th>Specialty</th>  <td class="item-data"> <apex:outputText value="{!Specialty }"/> </td>
+        </tr>
+        <tr>
+            <th>The teacher in charge of the group</th>  <td class="item-data"> <apex:outputText value="{!TheTeacherInChargeOfTheGroup }"/> </td>
+        </tr>
+    </table>
+    
+</apex:page>
