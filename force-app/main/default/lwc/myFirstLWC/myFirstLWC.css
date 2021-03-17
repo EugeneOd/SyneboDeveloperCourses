@@ -1,0 +1,51 @@
+.main-wrapper {
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.table_container{
+    width:100%;
+    height: 100%;
+    position: relative;
+    max-height: 400px;
+
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #95989A46;
+}
+
+thead {
+    display: table-header-group;
+    border: 1px solid #DDDBDA;
+}
+
+tbody {
+    border-bottom: 2px solid #dddbda;
+}
+
+th {
+    border: 1px solid grey;
+}
+
+.footer_buttons {
+    justify-content: center;
+    display: flex;
+    margin-top: 15px;
+}

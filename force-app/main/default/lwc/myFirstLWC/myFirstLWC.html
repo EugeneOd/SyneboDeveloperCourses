@@ -1,0 +1,68 @@
+<template>
+    <div class="main-wrapper">
+    <div class="form-container">
+        <div class="input wrapper">
+            <p>Range start</p> <input type="number" class="start">
+            <p>Range end</p> <input type="number" class="end">
+        </div>
+        <div class="button wrapper">
+            <button onclick={sendRequest}>Send request</button>
+        </div>
+    </div>
+    <div class="table_container" if:true={showTable}>
+        <table class="table" data-id='table'>
+            <!-- Header -->
+            <thead>
+                <tr>
+                    <th scope='col' style="border-right: none; width: 22px;">
+                        <div class="checkbox">
+                            <input type="checkbox" name="options" data-id='mainCheckbox' data-index-number='main' onchange={selectDeselectCheckboxes} />
+                        </div>
+                    </th>
+                    <template for:each={columns} for:item="column" for:index="indexVar">
+                        <th scope='col' data-id={column.fieldName} key={column.fieldName}>
+                            {column.label}
+                        </th>
+                    </template>
+                </tr>
+            </thead>
+            <!-- Body -->
+            <tbody class="tbody">
+                <template for:each={itemData} for:item="item" for:index="indexVar">
+                    <tr class="body_row" key={item.Id}>
+                        <th scope="row" key={item.Id}>
+                            <div class="checkbox">
+                                <input type="checkbox" name="options" data-id='checkbox' data-index-number={indexVar}
+                                    data-key={indexVar}
+                                    onchange={selectDeselectCheckboxes}/>
+                                <label class="checkbox__label">
+                                    <span class="checkbox_faux"></span>
+                                </label>
+                            </div>
+                        </th>
+                        <th>
+                            <span>{item.id}</span>
+                        </th>
+                        <th>
+                            <span>{item.name}</span>
+                        </th>
+                        <th>
+                            <span>{item.eats}</span>
+                        </th>
+                        <th>
+                            <span>{item.says}</span>
+                        </th>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <!-- Save Changes Button -->
+        <div class="footer_buttons" if:true={showSaveChangesBtn}>
+            <lightning-button variant="brand" label="Save Changes" title="Save Changes" onclick={saveChanges}
+                disabled={disableChangeBtn} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="brand" label="Cancel Changes" title="Cancel Changes" onclick={cancelChanges}
+                class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </div>
+</div>
+</template>
